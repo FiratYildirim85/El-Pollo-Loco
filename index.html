@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=" UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Pollo Loco</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="shortcut icon" href="icons/sombrero.png">
+
+    <script src="./models/world.class.js"></script>
+    <script src="./models/keyboard.class.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./models/level.class.js"></script>
+    <script src="./levels/level1.js"></script>
+    <script src="./models/drawable-object.class.js"></script>
+    <script src="./models/movable-object.class.js"></script>
+    <script src="./models/statusbar-object-class.js"></script>
+    <script src="./models/statusbar-health.class.js"></script>
+    <script src="./models/statusbar-coin.class.js"></script>
+    <script src="./models/statusbar-bottle.class.js"></script>
+    <script src="./models/statusbar-endboss-health.class.js"></script>
+    <script src="./models/statusbar-icon-endboss.class.js"></script>
+    <script src="./models/coin.class.js"></script>
+    <script src="./models/bottle.class.js"></script>
+    <script src="./models/throwable-object.class.js"></script>
+    <script src="./models/character.class.js"></script>
+    <script src="./models/normal-chicken.class.js"></script>
+    <script src="./models/small-chicken.class.js"></script>
+    <script src="./models/cloud.class.js"></script>
+    <script src="./models/background-object.class.js"></script>
+    <script src="./models/endboss.class.js"></script>
+</head>
+
+<body>
+
+
+    <h1>El Pollo Loco</h1>
+
+
+    <div class="positionRelative" id="fullScreen">
+
+
+        <canvas width="820" height="480" id="canvas" class="d-none">
+
+        </canvas>
+
+
+
+        <!--Start Screen-->
+        <div class="startScreenContainer">
+            <img src="img/9_intro_outro_screens/start/startscreen_2.png" class="startScreen" id="startScreen">
+            <img src="icons/playButton.png" class="btnPlay" onclick="startGame()" id="btnPlay">
+            <img src="icons/controllerIcon.png" class="steeringIcon" onclick="openSteeringMenu()" id="steeringIcon">
+        </div>
+
+
+
+        <!--Win Screen-->
+        <div class="winScreenContainer d-none" id="winScreenContainer">
+            <h2>Congratulations You Win !</h2>
+            <div class="imgTrophyContainer">
+                <img src="./icons/winner.png">
+            </div>
+            <div class="btnContainer">
+                <button onclick="restartGame()" id="btnRestartWinScreen" class="btnRestart">Restart
+                    Game</button>
+                <button onclick="goBackToStartScreen()" id="btnMainMenuWinScreen" class="btnMainMenu">Main
+                    Menu</button>
+            </div>
+        </div>
+
+        <!--Gameover Screen-->
+        <div class="gameOverScreenContainer d-none" id="gameOverScreenContainer">
+            <img src="./img/9_intro_outro_screens/game_over/game over!.png" class="gameOverScreen" id="gameOverScreen">
+            <div class="btnContainer">
+                <button onclick="restartGame()" id="btnRestartGameOverScreen" class="btnRestart">Restart Game</button>
+                <button onclick="goBackToStartScreen()" id="btnMainMenuGamOverScreen" class="btnMainMenu">Main
+                    Menu</button>
+            </div>
+        </div>
+
+
+        <!--Fullscreen Buttons-->
+        <img src="icons/enterFullscreenIcon.png" class="enterFullscreenIcon d-none" onclick="openFullscreen()"
+            id="enterFullscreenIcon">
+        <img src="icons/exitFullscreenIcon.png" class="exitFullscreenIcon d-none" onclick="closeFullscreen()"
+            id="exitFullscreenIcon">
+
+
+        <!--Mobile Buttons-->
+        <div class="positionAbsoluteLeft d-none" id="positionAbsoluteLeft">
+            <img src="icons/arrowLeftMobile.png" class="btnMobile" id="btnMobileLeft">
+            <img src="icons/arrowRightMobile.png" class="btnMobile" id="btnMobileRight">
+        </div>
+        <div class="positionAbsoluteRight d-none" id="positionAbsoluteRight">
+            <img src="icons/arrowUpMobile.png" class="btnMobile" id="btnMobileUp">
+            <img src="icons/arrowThrowMobile.png" class="btnMobile" id="btnMobileThrow">
+        </div>
+
+        <!--Sound Buttons-->
+        <img src="icons/audioOnIcon.png" class="audioOnIcon d-none" onclick="turnSoundOn()" id="audioOnIcon">
+        <img src="icons/audioOffIcon.png" class="audioOffIcon d-none" onclick="turnSoundOff()" id="audioOffIcon">
+    </div>
+
+
+    <!--Steering Menu-->
+    <div class="containerGameControlls d-none" id="containerGameControlls">
+        <img src="./icons/x_icon.png" class="arrowBack" onclick="closeSteeringMenu()" id="arrowBackGameControlls">
+
+        <div class="div-controlls">
+            <h2>Game Controlls</h2>
+
+            <div class="div-controlls2">
+                <p>Move right</p>
+                <img src="icons/arrowRight.png">
+            </div>
+
+            <div class="div-controlls2">
+                <p>Move left</p>
+                <img src="icons/arrowLeft.png">
+            </div>
+
+            <div class="div-controlls2">
+                <p>Jump</p>
+                <img src="icons/spaceButton.png">
+            </div>
+
+            <div class="div-controlls2">
+                <p>Throw Bottle</p>
+                <img src="icons/letterA.png">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
