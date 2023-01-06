@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('../icons/desert.png');
+    background-image: url('../img/desert.png');
     background-size: cover;
     background-position: center;
     font-family: 'Aref Ruqaa Ink';

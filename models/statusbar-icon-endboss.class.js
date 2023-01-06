@@ -4,7 +4,7 @@ class StatusbarIconEndboss extends DrawableObject {
     width = 70;
     height = 70;
     imageIconEnbossStatusbar = [
-        'img/7_statusbars/3_icons/icon_health_endboss.png',
+        'img/7_statusbars/3_img/icon_health_endboss.png',
     ];
 
 
